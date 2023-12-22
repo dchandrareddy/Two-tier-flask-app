@@ -110,4 +110,42 @@ docker run -d --name flaskapp -v mysql-data:/var/lib/mysql -v ./message.sql:/doc
 - If you encounter issues, check Docker logs and error messages for troubleshooting.
 
 ```
+notes commands
+1  ls
+    2  sudo apt install docker.io
+    3  sudo apt update
+    4  sudo apt install docker.io
+    5  docker ps
+    6  whoami
+    7  sudo docker ps
+    8  sudo chown $USER /var/run/docker.sock
+    9  docker ps
+   10  git clone https://github.com/LondheShubham153/two-tier-flask-app.git
+   11  ls
+   12  cd two-tier-flask-app/
+   13  ls
+   14  docker build -t flaskapp .
+   15  docker images
+   16  docker run -d -p 5000:5000 flaskapp:latest
+   17  docker network create twotier
+   18  docker ps
+   19  docker kill 2bdbcee7f471
+   20  docker run -d -p 5000:5000 --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=mydb flaskapp:latest
+   21  docker run -d -p 3306:3306 --network=twotier -e MYSQL_DATABASE=mydb -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_ROOT_PASSWORD=admin mysql:5.7
+   22  docker ps
+   23  docker network ls
+   24  docker network inspect twotier
+   25  docker kill
+   26  docker rm a26a5d7e64ab bba6263dc1d2
+   27  docker kill a26a5d7e64ab bba6263dc1d2
+   28  docker ps
+   29  docker run -d -p 5000:5000 --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=mydb --name=flask flaskapp:latest
+   30  docker run -d -p 3306:3306 --network=twotier -e MYSQL_DATABASE=mydb -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_ROOT_PASSWORD=admin --name=mysql mysql:5.7
+   31  docker network inspect twotier
+   32  cler
+   33  cls
+   34  clear
+   35  docker ps
+   36  docker exec -it d8be9951ed81  bash
+   37  docker ps
 
